@@ -3,16 +3,35 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-     
 
-     <TextView
-        android:id="@+id/lblDear"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:layout_width="wrap_content"
+
+    <Button
+        android:id="@+id/item1"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:minWidth="25px"
-        android:minHeight="25px"
-        android:gravity="center"
-        android:text="Dear"/>
+        android:text="item1"
+        android:gravity="fill"
+        android:textSize="18dp"
+    />
+
+    <Button
+        android:id="@+id/item2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="item2"
+        android:gravity="fill"
+        android:textSize="18dp"
+    />
+
+    <Button
+        android:id="@+id/item3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="item3"
+        android:gravity="fill"
+        android:textSize="18dp"
+    />
+
+
 
 </LinearLayout>

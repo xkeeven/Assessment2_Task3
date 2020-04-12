@@ -15,16 +15,36 @@ namespace Assessment2_Task3
     [Activity(Label = "MainMenu")]
     public class MainMenu : Activity
     {
-        TextView username;
+        Button Item1;
+        Button Item2;
+        Button Item3;
+
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
+            SetContentView(Resource.Layout.MainMenu);
 
-            username = FindViewById<TextView>(Resource.Id.lblDear);
-            username.Text = Intent.GetStringExtra("AccName");
+            Item1 = FindViewById<Button>(Resource.Id.item1);
+            Item2 = FindViewById<Button>(Resource.Id.item2);
+            Item3 = FindViewById<Button>(Resource.Id.item3);
 
+            Item1.Click += (Sender, e) =>
+            {
+                Intent ItemIntent1 = new Intent(this, typeof(Item1));
+                StartActivity(ItemIntent1);
+            };
 
-            // Create your application here
+            Item2.Click += (Sender, e) =>
+            {
+                Intent ItemIntent2 = new Intent(this, typeof(Item2));
+                StartActivity(ItemIntent2);
+            };
+
+            Item3.Click += (Sender, e) =>
+            {
+                Intent ItemIntent3 = new Intent(this, typeof(Item3));
+                StartActivity(ItemIntent3);
+            };
         }
     }
 }

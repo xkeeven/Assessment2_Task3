@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.Net;
 using System.Text;
 
 using Android.App;
@@ -9,6 +11,7 @@ using Android.OS;
 using Android.Runtime;
 using Android.Views;
 using Android.Widget;
+using Newtonsoft.Json;
 
 namespace Assessment2_Task3
 {
@@ -17,7 +20,7 @@ namespace Assessment2_Task3
     {
         Button btnLogin;
         Button btnSignUp;
-        EditText etAccName;
+        EditText etUsername;
         EditText etPassword;
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -26,23 +29,60 @@ namespace Assessment2_Task3
             SetContentView(Resource.Layout.Login);
 
             btnLogin = FindViewById<Button>(Resource.Id.btnLogin);
-            etAccName = FindViewById<EditText>(Resource.Id.etAccName);
+            etUsername = FindViewById<EditText>(Resource.Id.etUsername);
             etPassword = FindViewById<EditText>(Resource.Id.etPassword);
             btnSignUp = FindViewById<Button>(Resource.Id.btnSignUp);
 
             btnLogin.Click += (Sender, e) =>
             {
+                //var request = HttpWebRequest.Create(string.Format(@"https://10.0.2.2:5001/api/Users"));
+                ////http://172.31.99.148:5000/api/Users
+                //request.ContentType = "application/json";
+                //request.Method = "GET";
+                //using (HttpWebResponse response = request.GetResponse() as HttpWebResponse)
+                //{
+                //    if (response.StatusCode != HttpStatusCode.OK)
+
+                //        Console.Out.WriteLine("Error fetching data. Server returned status code: {0}", response.StatusCode);
+
+                //    using (StreamReader reader = new StreamReader(response.GetResponseStream()))
+                //    {
+                //        var content = reader.ReadToEnd();
+                //        if (string.IsNullOrWhiteSpace(content))
+                //        {
+                //            Console.Out.WriteLine("Response contained empty body...");
+                //        }
+                //        else
+                //        {
+                //            var userList = JsonConvert.DeserializeObject<List<User>>(content);
+                //            Console.Out.WriteLine("Response Body: \r\n {0}", content);
+                //            foreach (User user in userList)
+                //            {
+                //                if (user.UserName == etUsername.Text & user.Password == etPassword.Text)
+                //                {
+                //                    Toast.MakeText(this, "Welcome", ToastLength.Long);
+                //                    Intent MainMenuIntent = new Intent(this, typeof(MainMenu));
+                //                    StartActivity(MainMenuIntent);
+                //                }
+                //                else
+                //                {
+                //                    Toast.MakeText(this, "Failed to Login. Please retry!", ToastLength.Long);
+                //                }
+                //            }
+                //        }
+                //    }
+
+
+                //}
                 Intent MainMenuIntent = new Intent(this, typeof(MainMenu));
-                MainMenuIntent.PutExtra("AccName", etAccName.Text);
-                MainMenuIntent.PutExtra("Password", etPassword.Text);
                 StartActivity(MainMenuIntent);
             };
 
             btnSignUp.Click += (Sender, e) =>
-            {
-                Intent RegisterIntent = new Intent(this, typeof(SignUp));
-                StartActivity(RegisterIntent);
-            };
+                {
+                    Intent RegisterIntent = new Intent(this, typeof(SignUp));
+                    StartActivity(RegisterIntent);
+                };
 
             // Create your application here
         }
