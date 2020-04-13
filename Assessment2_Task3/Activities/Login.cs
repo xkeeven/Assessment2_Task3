@@ -38,6 +38,7 @@ namespace Assessment2_Task3
                 Intent MainMenuIntent = new Intent(this, typeof(MainMenu));
                 StartActivity(MainMenuIntent);
 
+
                 //var request = HttpWebRequest.Create(string.Format(@"https://10.0.2.2:5001/api/Customers"));
 
                 //request.ContentType = "application/json";
