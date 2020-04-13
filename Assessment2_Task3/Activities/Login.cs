@@ -35,8 +35,11 @@ namespace Assessment2_Task3
 
             btnLogin.Click += (Sender, e) =>
             {
-                //var request = HttpWebRequest.Create(string.Format(@"https://10.0.2.2:5001/api/Users"));
-                ////http://172.31.99.148:5000/api/Users
+                Intent MainMenuIntent = new Intent(this, typeof(MainMenu));
+                StartActivity(MainMenuIntent);
+
+                //var request = HttpWebRequest.Create(string.Format(@"https://10.0.2.2:5001/api/Customers"));
+
                 //request.ContentType = "application/json";
                 //request.Method = "GET";
                 //using (HttpWebResponse response = request.GetResponse() as HttpWebResponse)
@@ -71,11 +74,7 @@ namespace Assessment2_Task3
                 //            }
                 //        }
                 //    }
-
-
                 //}
-                Intent MainMenuIntent = new Intent(this, typeof(MainMenu));
-                StartActivity(MainMenuIntent);
             };
 
             btnSignUp.Click += (Sender, e) =>
@@ -84,7 +83,6 @@ namespace Assessment2_Task3
                     StartActivity(RegisterIntent);
                 };
 
-            // Create your application here
         }
     }
 }
