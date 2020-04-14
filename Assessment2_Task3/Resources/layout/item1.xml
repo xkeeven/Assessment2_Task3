@@ -63,27 +63,4 @@
         android:layout_marginTop="10dp"
     />
 
-    <Button
-        android:id="@+id/btn1"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/ItemPhone1"
-        android:layout_marginTop="10dp"
-        android:text="I WANT IT"/>
-    <Button
-        android:id="@+id/btn2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/btn1"
-        android:layout_marginTop="10dp"
-        android:text="Share ITEM"/>
-    <Button
-        android:id="@+id/btn3"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/btn2"
-        android:layout_marginTop="10dp"
-        android:text="SEND ME MESSAGE"/>
-
-
 </RelativeLayout>
