@@ -32,6 +32,13 @@
         android:textSize="18dp"
     />
 
-
+    <Button
+        android:id="@+id/Additem"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Add item"
+        android:gravity="fill"
+        android:textSize="18dp"
+    />
 
 </LinearLayout>

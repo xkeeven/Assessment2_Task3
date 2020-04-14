@@ -67,6 +67,14 @@
     />
 
     <Button
+        android:id="@+id/function2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/ItemPhone2"
+        android:text="more functions"
+    />
+
+    <Button
         android:id="@+id/map2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

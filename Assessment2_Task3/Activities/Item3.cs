@@ -16,7 +16,7 @@ namespace Assessment2_Task3
     [Activity(Label = "Item3")]
     public class Item3 : Activity
     {
-        Button Back3, map3;
+        Button Back3, map3, function3;
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
@@ -24,6 +24,7 @@ namespace Assessment2_Task3
 
             Back3 = FindViewById<Button>(Resource.Id.Back3);
             map3 = FindViewById<Button>(Resource.Id.map3);
+            function3 = FindViewById<Button>(Resource.Id.function3);
 
             Back3.Click += (Sender, e) =>
             {
@@ -35,6 +36,12 @@ namespace Assessment2_Task3
             {
                 Intent mapIntent3 = new Intent(this, typeof(location));
                 StartActivity(mapIntent3);
+            };
+
+            function3.Click += (Sender, e) =>
+            {
+                Intent btnshareIntent = new Intent(this, typeof(share));
+                StartActivity(btnshareIntent);
             };
         }
     }

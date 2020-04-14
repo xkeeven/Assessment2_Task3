@@ -7,26 +7,31 @@ using Android.App;
 using Android.Content;
 using Android.OS;
 using Android.Runtime;
+using Android.Support.V7.App;
 using Android.Views;
 using Android.Widget;
 
 namespace Assessment2_Task3
 {
     [Activity(Label = "MainMenu")]
-    public class MainMenu : Activity
+    public class MainMenu : AppCompatActivity
     {
         Button Item1;
         Button Item2;
         Button Item3;
+        Button Additem;
+        Button btnshare;
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.MainMenu);
 
+
             Item1 = FindViewById<Button>(Resource.Id.item1);
             Item2 = FindViewById<Button>(Resource.Id.item2);
             Item3 = FindViewById<Button>(Resource.Id.item3);
+            Additem = FindViewById<Button>(Resource.Id.Additem);
 
             Item1.Click += (Sender, e) =>
             {
@@ -44,6 +49,12 @@ namespace Assessment2_Task3
             {
                 Intent ItemIntent3 = new Intent(this, typeof(Item3));
                 StartActivity(ItemIntent3);
+            };
+
+            Additem.Click += (Sender, e) =>
+            {
+                Intent AdditemIntent = new Intent(this, typeof(addItem));
+                StartActivity(AdditemIntent);
             };
         }
     }
