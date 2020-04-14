@@ -47,6 +47,14 @@
         android:gravity="fill"
         android:textSize="18dp"
     />
+        <Button
+        android:id="@+id/btnpro"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="profile"
+        android:gravity="fill"
+        android:textSize="18dp"
+    />
 
 
 </LinearLayout>

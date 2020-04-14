@@ -10,6 +10,7 @@ using Android.Views;
 using Android.Widget;
 using Xamarin.Essentials;
 using TaskStackBuilder = Android.Support.V4.App.TaskStackBuilder;
+using Android.Content;
 
 namespace Assessment2_Task3
 {
@@ -19,6 +20,7 @@ namespace Assessment2_Task3
         static readonly int NOTIFICATION_ID = 1000;
         static readonly string CHANNEL_ID = "location_notification";
         internal static readonly string COUNT_KEY = "count";
+        Button BackAAA;
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -31,14 +33,21 @@ namespace Assessment2_Task3
 
             CreateNotificationChannel();
 
-            Button btn = FindViewById<Button>(Resource.Id.btn1);
-            btn.Click += Btn1_click;
+            Button btn1 = FindViewById<Button>(Resource.Id.btn1);
+            btn1.Click += Btn1_click;
 
             Button btn2 = FindViewById<Button>(Resource.Id.btn2);
             btn2.Click += Btn2_Click;
 
             Button btn3 = FindViewById<Button>(Resource.Id.btn3);
             btn3.Click += Btn3_Click;
+
+            Button BackAAA = FindViewById<Button>(Resource.Id.BackAAA);
+            BackAAA.Click += (Sender, e) =>
+            {
+                Intent BackAAAIntent = new Intent(this, typeof(MainMenu));
+                StartActivity(BackAAAIntent);
+            };
 
         }
 
@@ -125,7 +134,7 @@ namespace Assessment2_Task3
         private async void Btn3_Click(Object sender, EventArgs e)
         {
             EditText editText1 = FindViewById<EditText>(Resource.Id.editText1);
-            string messageText = "Hi, I am interested in the item" + editText1.Text + "you have posted for sale. Could I please have more details?";
+            string messageText = "Hi, I am interested in the item " + editText1.Text + " you have posted for sale. Could I please have more details?";
             string recipient = "0212121212";
             try
             {
@@ -146,17 +155,8 @@ namespace Assessment2_Task3
                 // Other error has occurred.
             }
 
-
         }
 
-
-
-        public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Android.Content.PM.Permission[] grantResults)
-        {
-            Xamarin.Essentials.Platform.OnRequestPermissionsResult(requestCode, permissions, grantResults);
-
-            base.OnRequestPermissionsResult(requestCode, permissions, grantResults);
-        }
     }
 }
 

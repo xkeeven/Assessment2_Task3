@@ -20,6 +20,7 @@ namespace Assessment2_Task3
         Button Item3;
         Button Additem;
         Button btnshare;
+        Button btnpro;
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -31,6 +32,7 @@ namespace Assessment2_Task3
             Item3 = FindViewById<Button>(Resource.Id.item3);
             Additem = FindViewById<Button>(Resource.Id.Additem);
             btnshare = FindViewById<Button>(Resource.Id.btnshare);
+            btnpro = FindViewById<Button>(Resource.Id.btnpro);
 
             Item1.Click += (Sender, e) =>
             {
@@ -53,13 +55,18 @@ namespace Assessment2_Task3
             };
             Additem.Click += (Sender, e) =>
             {
-                Intent AdditemIntent = new Intent(this, typeof(additem));
+                Intent AdditemIntent = new Intent(this, typeof(addItem));
                 StartActivity(AdditemIntent);
             };
             btnshare.Click += (Sender, e) =>
             {
                 Intent btnshareIntent = new Intent(this, typeof(share));
                 StartActivity(btnshareIntent);
+            };
+            btnpro.Click += (Sender, e) =>
+            {
+                Intent btnproIntent = new Intent(this, typeof(profile));
+                StartActivity(btnproIntent);
             };
         }
 

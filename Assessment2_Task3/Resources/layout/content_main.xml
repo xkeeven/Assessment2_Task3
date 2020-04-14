@@ -8,43 +8,63 @@
 
      <TextView
         android:id="@+id/textView1"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:text="Share item!" />
+        android:gravity="center"
+        android:textSize="50dp"
+        android:background="@color/material_grey_100"
+        android:textColor="@android:color/black"
+        android:text="Place Item"
+    />
 
     <EditText
         android:inputType="text"
         android:id="@+id/editText1"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:hint="Enter item title"
-        android:layout_below ="@id/textView1"/>
-    <Button
-        android:id="@+id/btn1"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/editText1"
-        android:hint="I WANT IT"/>
+        android:hint="Which item do you want"
+        android:layout_marginTop="230dp"
+        android:layout_below ="@id/textView1"
+    />
+
     <TextView
         android:id="@+id/textview2"
         android:visibility="invisible"
         android:gravity="bottom"
         android:layout_below="@id/btn1"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+    />
+
+    <Button
+        android:id="@+id/btn1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/editText1"
+        android:text="I WANT IT"
+    />
 
     <Button
         android:id="@+id/btn2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/btn1"
-        android:hint="Share ITEM"/>
+        android:text="Share ITEM"
+    />
+
     <Button
         android:id="@+id/btn3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/btn2"
-        android:hint="SEND ME MESSAGE"/>
+        android:text="SEND ME MESSAGE"/>
+
+    <Button
+        android:id="@+id/BackAAA"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="back"
+        android:layout_below="@id/btn3"
+    />
 
 </RelativeLayout>
